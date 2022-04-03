@@ -16,6 +16,12 @@ namespace AutomationAPI
 		public :
 
 			/**
+			* <summary>Saves the Sphere Part Radius.</summary>
+			*/
+			void SaveSphereRadius(int radius);
+
+
+			/**
 			* <summary>Saves the Part File.</summary>  More commetns and details blah blah blah
 			*/
 			void Save();
@@ -24,6 +30,7 @@ namespace AutomationAPI
 			* <summary>Makes a Widget Feature</summary> Even More commetns and details blah blah blah
 			*/
 			void MakeWidgetFeature(bool option1, int values);
+
 
 			/**
 			* Returns the Feature collection for the part.

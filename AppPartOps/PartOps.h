@@ -13,6 +13,7 @@ class APPPARTOPS_API PartFile : public GuidObject
 		void SavePart();
 		void ClosePart();
 		void MakeWidgetFeature(bool option1, int values);
+		void SavePartRadius(int radius);
 
 	private:
 		PartFile(std::string partFilePath, int guid);
@@ -26,6 +27,9 @@ extern APPPARTOPS_API PartFile* Journaling_OpenPart(std::string);
 extern APPPARTOPS_API void Journaling_Part_Save(PartFile* partFile);
 
 extern APPPARTOPS_API void Journaling_Part_MakeWidgetFeature(PartFile* partFile, bool option1, int values);
+
+extern APPPARTOPS_API void Journaling_Part_SaveRadiusSize(PartFile* partFile, int radius);
+
 
 
 

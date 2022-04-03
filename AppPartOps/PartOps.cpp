@@ -13,7 +13,7 @@ using namespace std;
 
 PartFile* Journaling_OpenPart(std::string partFilePath)
 {
-	//If Journaling write the thing things
+	//If Journaling open the part
 	if (IsJournaling())
 	{
 		JournalStartCall("OpenPart", CannedGlobals::SESSION);
@@ -34,7 +34,7 @@ PartFile* Journaling_OpenPart(std::string partFilePath)
 
 PartFile* Journaling_MakePart(std::string partFilePath)
 {
-	//If Journaling write the thing things
+	//If Journaling make the part
 	if (IsJournaling())
 	{
 		JournalStartCall("MakePart", CannedGlobals::SESSION);
@@ -57,7 +57,7 @@ void Journaling_Part_Save(PartFile* partFile)
 {
 
 
-	//If Journaling write the thing things
+	//If Journaling save the part
 	if (IsJournaling())
 	{
 		JournalStartCall("Save", partFile);
@@ -90,6 +90,30 @@ void Journaling_Part_MakeWidgetFeature(PartFile* partFile, bool option1, int val
 	
 }
 
+
+
+
+void Journaling_Part_SaveRadiusSize(PartFile* partFile, int radius)
+{
+
+	//If Journaling save the radius of the current sphere part
+	if (IsJournaling())
+	{
+		JournalStartCall("MakeWidgetFeature", partFile);
+		JournalIntInParam(radius, "radius");
+	}
+	partFile->SavePartRadius(radius);
+
+	if (IsJournaling())
+	{
+		JournalEndCall();
+	}
+
+}
+
+
+
+
 PartFile::PartFile(std::string partFilePath, int guid) : GuidObject(guid),  m_partFilePath(partFilePath)
 {
 	cout << "    PartFile::PartFile called with " << partFilePath << " " << guid << endl;
@@ -111,6 +135,15 @@ void PartFile::MakeWidgetFeature(bool option1, int values)
 {
 	cout << "    MakeWidgetFeature called with " << option1 << " " << values << endl;
 }
+
+
+void PartFile::SavePartRadius(int radius)
+{
+	radius = 0;
+	cout << "    SavePartRadius called with " << radius << endl;
+}
+
+
 
 PartFile* PartFile::CreatePartFile(std::string partFilePath)
 {

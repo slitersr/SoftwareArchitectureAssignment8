@@ -135,12 +135,16 @@ void JournalIntInParam(int value, std::string paramName)
 {
     // TODO 
     // You will need ot create a JournalCallParamDataInteger class as a reminder
+    JournalCallParamDataInteger* journalCallParamData = new JournalCallParamDataInteger(paramName, JournalCallParamData::ParameterMetaType::INPUT, value);
+    currentCall->AddParameter(journalCallParamData);
 }
 
 void JournalBoolInParam(bool value, std::string paramName)
 {
     // TODO
     // You will need ot create a JournalCallParamDataBoolean class as a reminder
+    JournalCallParamDataBoolean* journalCallParamData = new JournalCallParamDataBoolean(paramName, JournalCallParamData::ParameterMetaType::INPUT, value);
+    currentCall->AddParameter(journalCallParamData);
 }
 
 void JournalStringInParam(std::string value, std::string paramName)

@@ -4,15 +4,14 @@
 
 namespace AutomationAPI
 {
-	class Block : CADObject
+	class Sphere : CADObject
 	{
-		public:
+	public:
 
 
-		private:
+	private:
 
 	};
 
 
 }
-

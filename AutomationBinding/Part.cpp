@@ -26,6 +26,20 @@ namespace AutomationAPI
 	};
 }
 
+void AutomationAPI::Part::SaveSphereRadius(int radius)
+{
+	PartFile* part = dynamic_cast<PartFile*>(GuidObjectManager::GetGuidObjectManager().GetObjectFromGUID(m_partImpl->m_guid));
+	if (part == nullptr)
+	{
+		throw std::exception("not able to retrieve Part Object");
+	}
+	else
+	{
+		Journaling_Part_SaveRadiusSize(part, radius);
+	}
+
+}
+
 
 void AutomationAPI::Part::Save()
 {

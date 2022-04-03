@@ -92,6 +92,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutomationBindingExports.h" />
+    <ClInclude Include="Sphere.h" />
+    <ClInclude Include="SphereBuilder.h" />
     <ClInclude Include="Wire.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockBuilder.h" />
@@ -117,6 +119,8 @@
     <ClCompile Include="Part.cpp" />
     <ClCompile Include="RoutingCollection.cpp" />
     <ClCompile Include="Session.cpp" />
+    <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="SphereBuilder.cpp" />
     <ClCompile Include="Wire.cpp" />
     <ClCompile Include="WireBuilder.cpp" />
   </ItemGroup>
